@@ -14,16 +14,17 @@
 //bebidas, como por exemplo: cafe expresso, com leite, leite quente, sucos em geral
 //refrigerantes em geral, e outras bebidas.
 /*********************************************************************************** */
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.io.BufferedReader;// É usado para ler caracteres de qualquer tipo de fluxo de entrada de caracteres (String, Arquivos , etc.)
+import java.io.BufferedWriter;//grava texto em um fluxo de saída de caracteres, armazenando caracteres em buffer para permitir a gravação eficiente de caracteres únicos, matrizes e strings.
+import java.io.FileReader;//Pode ser usado apenas para ler arquivos
+import java.io.FileWriter;//Classe de conveniência para escrever arquivos de caracteres. 
+import java.io.IOException;// lança o IOException sempre que uma operação de entrada ou saída falha ou é interpretada
+import java.util.ArrayList;// é um array redimensionável ele pode receber mais itens enquanto o arrey tem que receber um total de intens.
+import java.util.HashMap;//permite que você associe dados (valores) a identificadores (chaves) de maneira eficiente, permitindo recuperação rápida dos valores com base nas chaves.
+                        //(ArrayList vai implementar os métodos de List e pode ter métodos mais específicos que List não vai ter, aí você escolhe o que melhor se aplica a sua necessidade.)
+import java.util.List;//List é uma interface e ArrayList é uma classe que implementa List. 
+import java.util.Map;//objetos “Map” confiam seus dados em um algoritmo hash (hash code). Esse algoritmo transforma uma grande quantidade de dados em uma pequena quantidade de informações
+import java.util.Scanner;//Scanner para receber a entrada do usuario
 
 // Interface para definir a estrutura dos produtos da padaria.
 interface Produto {
@@ -32,6 +33,7 @@ interface Produto {
 }
 
 // Classe abstrata para produtos básicos
+//As classes abstratas servem como “modelo” para outras classes que dela herdem, não podendo ser instanciada por si só
 abstract class ProdutoBasic implements Produto {
     protected String descricao; // descrição do produto
     protected double preco; // Preço do produto
@@ -41,12 +43,12 @@ abstract class ProdutoBasic implements Produto {
         this.descricao = descricao;
         this.preco = preco;
     }
-
+    //reescrever um método, ou seja, podemos reescrever nas classes filhas métodos criados inicialmente na classe pai
     @Override
     public double getPreco() {
         return preco;
     }
-
+    
     @Override
     public String getDescricao() {
         return descricao;
