@@ -444,9 +444,19 @@ public class ExercicioPadariaV2 {
                                     }
                                     break;
                                 case 2:
-                                    System.out.print("Digite o sabor do bolo (por exemplo, 'Chocolate'): ");
-                                    String saborBolo = scanner.nextLine();
-                                    pedido.adicionarProduto(new Bolo(saborBolo));
+                                    System.out.println("Tipos de bolos disponíveis:");
+                                    for (int i = 0; i < tiposBolos.size(); i++) {
+                                        System.out.println((i + 1) + ". " + tiposBolos.get(i));
+                                    }
+                                    System.out.print("Escolha o tipo do bolo: ");
+                                    int tipoBoloEscolhido = scanner.nextInt() - 1;
+                                    scanner.nextLine(); // Consome a nova linha após a escolha
+                                    if (tipoBoloEscolhido >= 0 && tipoBoloEscolhido < tiposBolos.size()) {
+                                        String tipoBolo = tiposBolos.get(tipoBoloEscolhido);
+                                        pedido.adicionarProduto(new Bolo(tipoBolo));
+                                    } else {
+                                        System.out.println("Opção inválida.");
+                                    }
                                     break;
                                 case 3:
                                     System.out.println("Tipos de bebidas disponíveis:");
