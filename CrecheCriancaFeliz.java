@@ -1,7 +1,18 @@
+// Aluno: Lucas Matheus
+// Instituição: Senai
+// Professor: Kleber
+/*LocalDate é uma classe imutável que tem as mesmas funções da antiga classe java.util.Date, 
+mas com mais funcionalidades. é possível recuperar o dia, o mês e o ano de uma data 
+e até o nome do dia da semana em formato de string.*/
 import java.time.LocalDate;
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Period; /*é uma classe que representa um período de tempo em anos, 
+                            meses e dias, não so isso mas como calcular a idade*/
+
+import java.util.ArrayList;/*Agrupar os dados que queremos utiliza-los, permite add, remover
+                            procurar, ordenar... */
+
+import java.util.List; /* Permite o uso da classe list, ela pode ser representada por varias classes,
+                        aqui ela implementa Arraylist */
 
 // Classe abstrata Pessoa
 abstract class Pessoa {
@@ -51,7 +62,7 @@ class Crianca extends Pessoa {
         this.horario = horario;
     }
 
-    @Override
+    @Override /*Anotação que Garante sobrescrever o metodo em vez de criar um novo */
     public String getEndereco() {
         return enderecoResponsavel;
     }
